@@ -21,17 +21,7 @@ export function ConcertPage() {
         '2023': [{ url: "/Data/Festival/2023/Gala/photo1.jpg" }, { url: "/Data/Festival/2023/Gala/photo2.jpg" }, { url: "/Data/Festival/2023/Gala/photo3.jpg" }, { url: "/Data/Festival/2023/Gala/photo4.jpg" }, { url: "/Data/Festival/2023/Gala/photo5.jpg" }, { url: "/Data/Festival/2023/Gala/photo6.jpg" }, { url: "/Data/Festival/2023/Gala/photo7.jpg" }, { url: "/Data/Festival/2023/Gala/photo8.jpg" }, { url: "/Data/Festival/2023/Gala/photo9.jpg" }, { url: "/Data/Festival/2023/Gala/photo10.jpg" }, { url: "/Data/Festival/2023/Gala/photo11.jpg" }, { url: "/Data/Festival/2023/Gala/photo12.jpg" }, { url: "/Data/Festival/2023/Gala/photo13.jpg" }, { url: "/Data/Festival/2023/Gala/photo14.jpg" }, { url: "/Data/Festival/2023/Gala/photo15.jpg" }, { url: "/Data/Festival/2023/Gala/photo16.jpg" }, { url: "/Data/Festival/2023/Gala/photo17.jpg" }, { url: "/Data/Festival/2023/Gala/photo18.jpg" }, { url: "/Data/Festival/2023/Gala/photo19.jpg" }, { url: "/Data/Festival/2023/Gala/photo20.jpg" }, { url: "/Data/Festival/2023/Gala/photo21.jpg" }, { url: "/Data/Festival/2023/Gala/photo22.jpg" }, { url: "/Data/Festival/2023/Gala/photo23.jpg" }, { url: "/Data/Festival/2023/Gala/photo24.jpg" }, { url: "/Data/Festival/2023/Gala/photo25.jpg" }, { url: "/Data/Festival/2023/Gala/photo26.jpg" }, { url: "/Data/Festival/2023/Gala/photo27.jpg" }, { url: "/Data/Festival/2023/Gala/photo28.jpg" }, { url: "/Data/Festival/2023/Gala/photo29.jpg" }, { url: "/Data/Festival/2023/Gala/photo30.jpg" }, { url: "/Data/Festival/2023/Gala/photo31.jpg" }, { url: "/Data/Festival/2023/Gala/photo32.jpg" }, { url: "/Data/Festival/2023/Gala/photo33.jpg" }, { url: "/Data/Festival/2023/Gala/photo34.jpg" }, { url: "/Data/Festival/2023/Gala/photo35.jpg" }, { url: "/Data/Festival/2023/Gala/photo36.jpg" }, { url: "/Data/Festival/2023/Gala/photo37.jpg" }, { url: "/Data/Festival/2023/Gala/photo38.jpg" }, { url: "/Data/Festival/2023/Gala/photo39.jpg" }, { url: "/Data/Festival/2023/Gala/photo40.jpg" }, { url: "/Data/Festival/2023/Gala/photo41.jpg" }, { url: "/Data/Festival/2023/Gala/photo42.jpg" }, { url: "/Data/Festival/2023/Gala/photo43.jpg" }, { url: "/Data/Festival/2023/Gala/photo44.jpg" }, { url: "/Data/Festival/2023/Gala/photo45.jpg" }, { url: "/Data/Festival/2023/Gala/photo46.jpg" }, { url: "/Data/Festival/2023/Gala/photo47.jpg" }, { url: "/Data/Festival/2023/Gala/photo48.jpg" },],
     }
     useEffect(() => {
-        // fetch(`http://backend:4000/api/getGalaPhotoUrlsByYear/${year}`)
-        //     .then(response => response.json())
-        //     .then(data => {
-        //         if (Array.isArray(data)) {
-        //             const photoUrls = data;
-        //             setImages(photoUrls.map(url => ({ url })));
-        //         } else {
-        //             console.error('Expected an array of URLs');
-        //         }
-        //     })
-        //     .catch(error => console.error(error));
+
         setImages(yearsPhoto[year])
     }, [year]);
     return (
