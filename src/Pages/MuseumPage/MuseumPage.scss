@@ -1,0 +1,117 @@
+.museumPage {
+    font-family: "Montserrat Alternates";
+}
+
+.videos{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    align-items: center;
+    justify-content: center;
+    overflow: auto;
+    margin-top: 10px;
+}
+.modal_video{
+    width:95%;
+    height: 95%;
+    margin-top: 25px;
+    margin-left:25px
+}
+
+@media (max-width: 1200px) {
+    .videos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 800px) {
+    .videos {
+        grid-template-columns: 1fr;
+    }
+}
+
+.museumPage__container {
+    display: flex;
+    flex-direction: row;
+    margin: 1% 1% 0 2%;
+    justify-content: center
+}
+
+.museumPage__informationBlock {
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.museumPage__informationBlock__name {
+    font-size: 46px;
+    font-weight: bolder;
+}
+
+.museumPage__informationBlock__img__museum{
+    width: 900px;
+    padding: 2% 0;
+    position: relative;
+}
+
+.museumPage__informationBlock__img__museum img {
+    width: 100%;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.museumPage__informationBlock__img__museum.hover img {
+    opacity: 0.1;
+}
+
+.museumPage__informationBlock__img__museum .centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 46px;
+    display: none;
+    font-weight: bold;
+}
+
+.museumPage__informationBlock__img__museum.hover .centered {
+    display: block;
+}
+
+.museumPage__informationBlock__description{
+    font-size: 24px;
+}
+
+@media (max-width: 1405px) {
+    .museumPage__informationBlock__img__museum {
+        width: 510px;
+    }
+}
+
+@media (max-width: 870px) {
+    .museumPage__informationBlock {
+        width: 100%;
+    }
+
+    .museumPage__informationBlock__img__museum {
+        width: 610px;
+    }
+}
+
+@media (max-width: 620px) {
+    .museumPage__informationBlock__img__museum {
+        width: 420px;
+    }
+}
+
+@media (max-width: 430px) {
+    .museumPage__informationBlock__img__museum {
+        width: 310px;
+    }
+}
+
+.museumPage__informationBlock__img__museum {
+    transition: width 0.3s ease-in-out;
+}

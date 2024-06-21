@@ -1,0 +1,26 @@
+.contactPage {
+    font-family: "Montserrat Alternates";
+}
+
+.contactPage__container {
+    display: flex;
+    flex-direction: row;
+    margin: 1% 1% 0 2%;
+    // justify-content: space-between
+}
+
+.contactPage__informationBlock {
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    gap: 2%;
+}
+
+.contactPage__informationBlock__name {
+    font-size: 46px;
+    font-weight: bolder;
+}
+
+.contactPage__informationBlock__text{
+    font-size: 32px;
+}
