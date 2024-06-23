@@ -1,9 +1,25 @@
+// .friendsPage{
+//   position: relative;
+// }
+
 .friendsPage__container {
-    display: flex;
-    flex-direction: row;
-    margin: 1% 1% 0 2%;
-    // justify-content: space-between
+  display: flex;
+  flex-direction: row;
+  margin: 1% 1% 0 2%;
+  // justify-content: space-between
+  // position: relative;
+  min-height: 75vh;
+
 }
+
+.heading{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.heading svg{
+  margin-right: 10px;
+} 
 
 .friendsPage__container{
     display: flex;

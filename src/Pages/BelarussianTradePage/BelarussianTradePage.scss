@@ -1,10 +1,23 @@
+// .belarussianTradePage{
+//   position: relative;
+// }
+
 .belarussianTradePage__container {
     display: flex;
     flex-direction: row;
     margin: 1% 1% 0 2%;
     // justify-content: space-between
+    min-height: 75vh;
 }
 
+.heading{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.heading svg{
+  margin-right: 10px;
+} 
 
 .belarussianTradePage__container{
     display: flex;
