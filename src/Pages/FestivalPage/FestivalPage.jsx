@@ -63,16 +63,7 @@ export function FestivalPage({ activeButton }) {
         } else {
             setSelectedFolder(folderName);
             setSubfolderLinks(yearsLinks[folderName])
-            // try {
-            //     const response = await fetch(http://backend:4000/api/getSubfolderLinks/${folderName});
-            //     var subfolders = await response.text();
 
-            //     subfolders = subfolders.replace(/[\[\]"]/g, '');
-            //     console.log(subfolders);
-            //     setSubfolderLinks(subfolders.split(','));
-            // } catch (error) {
-            //     console.error('Ошибка при получении ссылок на подпапки:', error);
-            // }
         }
     };
 
