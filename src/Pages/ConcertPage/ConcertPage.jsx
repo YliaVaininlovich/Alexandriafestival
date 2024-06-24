@@ -9,26 +9,36 @@ import './ConcertPage.scss'
 export function ConcertPage() {
     const { year } = useParams();
     const [images, setImages] = useState([]);
+
     const navigate = useNavigate();
-    const yearsPhoto = {
-        '2014': [{ url: "/Data/Festival/2014/Gala/photo1.jpg" }, { url: "/Data/Festival/2014/Gala/photo2.jpg" }],
-        '2015': [{ url: "/Data/Festival/2015/Gala/photo1.jpg" }, { url: "/Data/Festival/2015/Gala/photo2.jpg" }],
-        '2016': [{ url: "/Data/Festival/2016/Gala/photo1.jpg" }],
-        '2017': [{ url: "/Data/Festival/2017/Gala/photo1.jpg" }, { url: "/Data/Festival/2017/Gala/photo2.jpg" }, { url: "/Data/Festival/2017/Gala/photo3.jpg" }],
-        '2019': [{ url: "/Data/Festival/2019/Gala/photo1.jpg" }],
-        '2020': [{ url: "/Data/Festival/2020/Gala/photo1.jpg" }, { url: "/Data/Festival/2020/Gala/photo2.jpg" }, { url: "/Data/Festival/2020/Gala/photo3.jpg" }],
-        '2021': [{ url: "/Data/Festival/2021/Gala/photo1.jpg" }, { url: "/Data/Festival/2021/Gala/photo2.jpg" }],
-        '2022': [{ url: "/Data/Festival/2022/Gala/photo1.jpg" }, { url: "/Data/Festival/2022/Gala/photo2.jpg" }, { url: "/Data/Festival/2022/Gala/photo3.jpg" }, { url: "/Data/Festival/2022/Gala/photo4.jpg" }, { url: "/Data/Festival/2022/Gala/photo5.jpg" }, { url: "/Data/Festival/2022/Gala/photo6.jpg" }, { url: "/Data/Festival/2022/Gala/photo7.jpg" }, { url: "/Data/Festival/2022/Gala/photo8.jpg" }],
-        '2023': [{ url: "/Data/Festival/2023/Gala/photo1.jpg" }, { url: "/Data/Festival/2023/Gala/photo2.jpg" }, { url: "/Data/Festival/2023/Gala/photo3.jpg" }, { url: "/Data/Festival/2023/Gala/photo4.jpg" }, { url: "/Data/Festival/2023/Gala/photo5.jpg" }, { url: "/Data/Festival/2023/Gala/photo6.jpg" }, { url: "/Data/Festival/2023/Gala/photo7.jpg" }, { url: "/Data/Festival/2023/Gala/photo8.jpg" }, { url: "/Data/Festival/2023/Gala/photo9.jpg" }, { url: "/Data/Festival/2023/Gala/photo10.jpg" }, { url: "/Data/Festival/2023/Gala/photo11.jpg" }, { url: "/Data/Festival/2023/Gala/photo12.jpg" }, { url: "/Data/Festival/2023/Gala/photo13.jpg" }, { url: "/Data/Festival/2023/Gala/photo14.jpg" }, { url: "/Data/Festival/2023/Gala/photo15.jpg" }, { url: "/Data/Festival/2023/Gala/photo16.jpg" }, { url: "/Data/Festival/2023/Gala/photo17.jpg" }, { url: "/Data/Festival/2023/Gala/photo18.jpg" }, { url: "/Data/Festival/2023/Gala/photo19.jpg" }, { url: "/Data/Festival/2023/Gala/photo20.jpg" }, { url: "/Data/Festival/2023/Gala/photo21.jpg" }, { url: "/Data/Festival/2023/Gala/photo22.jpg" }, { url: "/Data/Festival/2023/Gala/photo23.jpg" }, { url: "/Data/Festival/2023/Gala/photo24.jpg" }, { url: "/Data/Festival/2023/Gala/photo25.jpg" }, { url: "/Data/Festival/2023/Gala/photo26.jpg" }, { url: "/Data/Festival/2023/Gala/photo27.jpg" }, { url: "/Data/Festival/2023/Gala/photo28.jpg" }, { url: "/Data/Festival/2023/Gala/photo29.jpg" }, { url: "/Data/Festival/2023/Gala/photo30.jpg" }, { url: "/Data/Festival/2023/Gala/photo31.jpg" }, { url: "/Data/Festival/2023/Gala/photo32.jpg" }, { url: "/Data/Festival/2023/Gala/photo33.jpg" }, { url: "/Data/Festival/2023/Gala/photo34.jpg" }, { url: "/Data/Festival/2023/Gala/photo35.jpg" }, { url: "/Data/Festival/2023/Gala/photo36.jpg" }, { url: "/Data/Festival/2023/Gala/photo37.jpg" }, { url: "/Data/Festival/2023/Gala/photo38.jpg" }, { url: "/Data/Festival/2023/Gala/photo39.jpg" }, { url: "/Data/Festival/2023/Gala/photo40.jpg" }, { url: "/Data/Festival/2023/Gala/photo41.jpg" }, { url: "/Data/Festival/2023/Gala/photo42.jpg" }, { url: "/Data/Festival/2023/Gala/photo43.jpg" }, { url: "/Data/Festival/2023/Gala/photo44.jpg" }, { url: "/Data/Festival/2023/Gala/photo45.jpg" }, { url: "/Data/Festival/2023/Gala/photo46.jpg" }, { url: "/Data/Festival/2023/Gala/photo47.jpg" }, { url: "/Data/Festival/2023/Gala/photo48.jpg" },],
+    const yearsPhotoCount = {
+        '2014': 2,
+        '2015': 2,
+        '2016': 1,
+        '2017': 3,
+        '2019': 1,
+        '2020': 3,
+        '2021': 2,
+        '2022': 8,
+        '2023': 48,
     }
+
+
     async function handleFestivalClick() {
         navigate("/festival");
     }
 
+
     useEffect(() => {
 
-        setImages(yearsPhoto[year])
+        let yearsPhoto = [];
+        for (let i = 1; i <= yearsPhotoCount[year]; i++)
+            yearsPhoto.push({ url: `/Data/Festival/` + year + `/Gala/photo` + i + `.jpg` });
+        console.log(yearsPhoto);
+        setImages(yearsPhoto)
     }, [year]);
+
+
     return (
         <div className="concertPage">
             <Header></Header>
