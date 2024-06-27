@@ -1,3 +1,5 @@
+//Гала-концерт
+
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { Header } from "../../Component/Header/Header";
@@ -10,24 +12,31 @@ export function ConcertPage() {
     const { year } = useParams();
     const [images, setImages] = useState([]);
 
+    const [youtubeLinks, setYoutubeLinks] = useState([]);
+
     const navigate = useNavigate();
     const yearsPhotoCount = {
-        '2014': 2,
-        '2015': 2,
-        '2016': 1,
-        '2017': 3,
-        '2019': 1,
-        '2020': 3,
-        '2021': 2,
-        '2022': 8,
-        '2023': 48,
+        '2014': 9,
+        '2015': 3,
+        '2016': 10,
+        '2017': 17,
+        '2018': 19,
+        '2019': 5,
+        '2020': 47,
+        '2021': 16,
+        '2022': 34,
+        '2023': 52,
     }
 
+    const yearsYoutubeLinks = {
+        '2018': ['https://www.youtube.com/watch?v=QM_xMTE2wks', 'https://www.youtube.com/watch?v=wRAOtNO2978'],
+        '2021': ['https://www.youtube.com/watch?v=GBG0B0rlHBg&t=82s'],
+        '2023': ['https://www.youtube.com/watch?v=XaYaSHqUbPM&t=40s'],
+    }
 
     async function handleFestivalClick() {
         navigate("/festival");
     }
-
 
     useEffect(() => {
 
@@ -36,9 +45,10 @@ export function ConcertPage() {
             yearsPhoto.push({ url: `/Data/Festival/` + year + `/Gala/photo` + i + `.jpg` });
         console.log(yearsPhoto);
         setImages(yearsPhoto)
+
+        setYoutubeLinks(yearsYoutubeLinks[year] || []);
+
     }, [year]);
-
-
     return (
         <div className="concertPage">
             <Header></Header>
@@ -64,6 +74,9 @@ export function ConcertPage() {
                             />
                         )}
                     </div>
+                    {youtubeLinks.map((link) => (
+                        <a href={link}>Видеозапись концерта</a>
+                    ))}
                 </div>
                 <LeftPanel activeButton="festival"></LeftPanel>
             </div>
