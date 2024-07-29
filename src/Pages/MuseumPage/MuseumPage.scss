@@ -1,35 +1,48 @@
 .museumPage {
     font-family: "Montserrat Alternates";
-    // position: relative;
 }
 
-.videos{
+.videos {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     grid-gap: 20px;
     align-items: center;
     justify-content: center;
     overflow: auto;
     margin-top: 10px;
-}
-.modal_video{
-    width:95%;
-    height: 95%;
-    margin-top: 25px;
-    margin-left:25px
-}
-
-@media (max-width: 1200px) {
-    .videos {
-        grid-template-columns: repeat(2, 1fr);
-    }
+    overflow-x: hidden;
 }
 
 @media (max-width: 800px) {
     .videos {
         grid-template-columns: 1fr;
     }
+}
+
+.modal_video {
+    width: 95%;
+    height: 95%;
+    margin-top: 25px;
+    margin-left: 25px;
+}
+
+.videos a {
+    display: flex;
+    margin: 10px 0;
+    padding: 10px 20px;
+    background-color: #756ede;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    justify-content: space-around;
+    align-items: flex-start;
+    cursor: pointer;
+}
+
+.videos a:hover {
+    transform: scale(1.03);
+    transition: 0.3s ease-in-out;
 }
 
 .museumPage__container {
@@ -39,20 +52,43 @@
     justify-content: center
 }
 
-.museumPage__informationBlock {
+.museumPage__informationBlock__img__museum {
     width: 65%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.museumPage__informationBlock__img__museum img {
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.black-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90%;
+    background-color: black;
+    z-index: 0;
+    margin-top: 2%;
+
 }
 
 .museumPage__informationBlock__name {
     font-size: 46px;
     font-weight: bolder;
+    text-align: center;
 }
 
-.museumPage__informationBlock__img__museum{
-    width: 900px;
+.museumPage__informationBlock__img__museum {
+    width: 100%;
     padding: 2% 0;
     position: relative;
 }
@@ -62,8 +98,8 @@
     transition: opacity 0.3s ease-in-out;
 }
 
-.museumPage__informationBlock__img__museum.hover img {
-    opacity: 0.1;
+.museumPage__informationBlock__img__museum:hover img {
+    opacity: 0.3;
 }
 
 .museumPage__informationBlock__img__museum .centered {
@@ -71,48 +107,68 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: white;
-    font-size: 46px;
+    font-size: 55px;
     display: none;
     font-weight: bold;
+    background-color: transparent;
+    border: 10px solid white;
+    border-radius: 50%;
+    padding: 10px;
+    color: white;
+    transition: all 0.3s ease-in-out;
+    width: 150px;
+    height: 150px;
+    line-height: 50px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
 }
 
-.museumPage__informationBlock__img__museum.hover .centered {
-    display: block;
+.museumPage__informationBlock__img__museum:hover .centered {
+    display: flex;
 }
 
-.museumPage__informationBlock__description{
+.museumPage__informationBlock__description {
     font-size: 24px;
 }
 
 @media (max-width: 1405px) {
-    .museumPage__informationBlock__img__museum {
-        width: 510px;
+    .museumPage__informationBlock__img__museum .centered {
+        font-size: 45px;
+        width: 120px;
+        height: 120px;
     }
 }
 
 @media (max-width: 870px) {
-    .museumPage__informationBlock {
-        width: 100%;
-    }
-
-    .museumPage__informationBlock__img__museum {
-        width: 610px;
+    .museumPage__informationBlock__img__museum .centered {
+        font-size: 35px;
+        width: 100px;
+        height: 100px;
     }
 }
 
 @media (max-width: 620px) {
-    .museumPage__informationBlock__img__museum {
-        width: 420px;
+    .museumPage__informationBlock__img__museum .centered {
+        font-size: 25px;
+        width: 80px;
+        height: 80px;
     }
 }
 
 @media (max-width: 430px) {
-    .museumPage__informationBlock__img__museum {
-        width: 310px;
+    .museumPage__informationBlock__img__museum .centered {
+        font-size: 20px;
+        width: 60px;
+        height: 60px;
     }
 }
 
 .museumPage__informationBlock__img__museum {
     transition: width 0.3s ease-in-out;
+}
+
+.ReactModalPortal {
+    z-index: 1000;
+    position: relative;
 }
