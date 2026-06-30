@@ -12,8 +12,6 @@ export function ConcertPage() {
     const { year } = useParams();
     const [images, setImages] = useState([]);
 
-    const [youtubeLinks, setYoutubeLinks] = useState([]);
-
     const navigate = useNavigate();
     const yearsPhotoCount = {
         '2014': 9,
@@ -27,13 +25,6 @@ export function ConcertPage() {
         '2022': 34,
         '2023': 52,
     }
-
-    const yearsYoutubeLinks = {
-        '2018': ['https://www.youtube.com/watch?v=QM_xMTE2wks', 'https://www.youtube.com/watch?v=wRAOtNO2978'],
-        '2021': ['https://www.youtube.com/watch?v=GBG0B0rlHBg&t=82s'],
-        '2023': ['https://www.youtube.com/watch?v=XaYaSHqUbPM&t=40s'],
-    }
-
     async function handleFestivalClick() {
         navigate("/festival");
     }
@@ -45,8 +36,6 @@ export function ConcertPage() {
             yearsPhoto.push({ url: `/Data/Festival/` + year + `/Gala/photo` + i + `.jpg` });
         console.log(yearsPhoto);
         setImages(yearsPhoto)
-
-        setYoutubeLinks(yearsYoutubeLinks[year] || []);
 
     }, [year]);
     return (
@@ -74,9 +63,6 @@ export function ConcertPage() {
                             />
                         )}
                     </div>
-                    {youtubeLinks.map((link) => (
-                        <a href={link}>Видеозапись концерта</a>
-                    ))}
                 </div>
                 <LeftPanel activeButton="festival"></LeftPanel>
             </div>
