@@ -18,7 +18,7 @@
   cursor: pointer;
 }
 
-.heading h1 {
+.kirmashPage__container__info {
   min-width: 0;
   overflow-wrap: anywhere;
   font-size: clamp(24px, 3vw, 48px);
@@ -48,7 +48,7 @@
     flex-basis: 44px;
   }
 
-  .heading h1 {
+  .kirmashPage__container__info {
     font-size: 22px;
   }
 }
