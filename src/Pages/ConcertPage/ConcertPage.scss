@@ -6,37 +6,37 @@
   display: flex;
   flex-direction: row;
   margin: 1% 1% 0 2%;
-  // justify-content: space-between
-  min-height: 75vh;
+  justify-content: center;
 }
 
 .heading {
   display: flex;
   flex-direction: row;
   align-items: center;
+  width: 100%;
 }
 
 .heading svg {
+  flex: 0 0 60px;
   margin-right: 10px;
+  cursor: pointer;
 }
 
-.concertPage__container {
+.heading h1 {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  font-size: clamp(24px, 3vw, 48px);
+}
+
+.concertPage__informationBlock {
+  width: 65%;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
-
 
 .slider_size {
-  display: flex;
-  justify-content: center;
-}
-
-.slider_size div:first-child {
-  width: 840px !important;
-  height: 450px !important;
-  transition: width 0.3s ease-in-out;
-
+  width: 100%;
 }
 
 
@@ -54,30 +54,20 @@
   align-items: flex-start;
 }
 
-@media (max-width: 1400px) {
-  .slider_size div:first-child {
-    width: 560px !important;
-    height: 380px !important;
-  }
-}
-
-@media (max-width: 810) {
-  .slider_size div:first-child {
-    width: 610px !important;
-    height: 300px !important;
-  }
-}
-
-@media (max-width: 768px) {
-  .slider_size div:first-child {
-    width: 480px !important;
-    height: 270px !important;
+@media (max-width: 870px) {
+  .concertPage__informationBlock {
+    width: 100%;
   }
 }
 
 @media (max-width: 576px) {
-  .slider_size div:first-child {
-    width: 320px !important;
-    height: 180px !important;
+  .heading svg {
+    width: 44px;
+    height: 44px;
+    flex-basis: 44px;
+  }
+
+  .heading h1 {
+    font-size: 22px;
   }
 }

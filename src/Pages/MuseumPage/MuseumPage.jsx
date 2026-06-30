@@ -5,7 +5,7 @@ import { LeftPanel } from "../../Component/LeftPanel/LeftPanel";
 import Modal from 'react-modal';
 import './MuseumPage.scss';
 
-Modal.setAppElement('#root'); // Это нужно для доступности модального окна
+Modal.setAppElement('#root');
 
 export function MuseumPage() {
   const [text, setText] = useState('');
@@ -15,25 +15,9 @@ export function MuseumPage() {
   const [currentVideo, setCurrentVideo] = useState('');
 
   const videos = ['/Data/Museum/Военные_атташе_и _лены_их_семей_в_Александрии.mp4', '/Data/Museum/Гуканне_вясны_Музейное_занятие.mp4', '/Data/Museum/Делегация_Министерства_спорта_РФ_в_Александрии.mp4', '/Data/Museum/Дожинки_История_и_современность.mp4', '/Data/Museum/Международный_день_памяти_жертв_холокоста.mp4', '/Data/Museum/Патриотическое_воспитание_школьников_в_музее.mp4', '/Data/Museum/Петров_день_в_д.Кривель_Туристический_проект.mp4', '/Data/Museum/Проект_по_гражданско-патриотическому_воспитанию_дошкольников,_детский_сад.mp4'];
+
   useEffect(() => {
-    const fetchData = async () => {
-      // try {
-      //     // const response = await fetch('http://backend:4000/api/getAllMuseum');
-      //     // const data = await response.json();
-      //     // if (data.length > 0) {
-      //     //     setImage_url(data[0].image_url);
-      //     //     setText(data[0].text);
-      //     // }
-
-      //     const videoResponse = await fetch('http://backend:4000/api/getMP4Links');
-      //     const videoData = await videoResponse.json();
-      //     setVideoLinks(videoData);
-      // } catch (error) {
-      //     console.error('Error:', error);
-      // }
-      setVideoLinks(videos)
-
-    };
+    const fetchData = async () => { setVideoLinks(videos) };
     fetchData();
   }, []);
 
@@ -52,12 +36,18 @@ export function MuseumPage() {
       <div className="museumPage__container">
         <div className="museumPage__informationBlock">
           <div className="museumPage__informationBlock__name">Музей</div>
+          <div className="museumPage__informationBlock__img__museum hover" onClick={() => window.open('/Data/Tour/index.html', '_blank')}>
+            <div className="black-background"></div>
+            <img src={'/Data/Museum/museum.png'} alt="" />
+            <div className="centered">360</div>
+          </div>
           <div className="videos">
             {videoLinks.map((link, index) => (
-              <video key={index} src={link} width='100%' height='100%' onClick={() => openModal(link)} />
+              <a key={index} onClick={() => openModal(link)}>
+                {link.split('/')[3].replace(/_/g, ' ').replace('.mp4', '')}
+              </a>
             ))}
           </div>
-
         </div>
         <LeftPanel activeButton="museum"></LeftPanel>
       </div>

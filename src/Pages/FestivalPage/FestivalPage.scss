@@ -3,7 +3,7 @@
 }
 
 .folderButtons .button_comp {
-    margin: 10px;
+    margin: 0;
 }
 
 .festivalPage__container {
@@ -23,20 +23,26 @@
 }
 
 .festivalPage__informationBlock__img__festival {
-    width: 900px;
+    width: 100%;
+    height: auto;
+    display: block;
     padding: 2% 0;
 }
 
 .folderButtons {
-    justify-content: center;
-    gap: 1%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 20px;
 }
 
 .folderButtonDiv {
-    width: 290px;
+    width: 100%;
+}
+
+.folderButtons .folderButtonComp {
+    max-width: none;
+    font-size: clamp(22px, 2.8vw, 42px);
 }
 
 ul {
@@ -54,36 +60,22 @@ li:hover {
 }
 
 
-.festivalPage__informationBlock__img__festival {
-    transition: width 0.3s ease-in-out;
-}
-
-@media (max-width: 1405px) {
-
-    .festivalPage__informationBlock__img__festival {
-        width: 510px;
-    }
-}
-
-
 @media (max-width: 870px) {
-
-    .festivalPage__informationBlock__img__festival {
-        width: 610px;
+    .festivalPage__informationBlock {
+        width: 100%;
     }
 }
 
 
 
 @media (max-width: 620px) {
-    .festivalPage__informationBlock__img__festival {
-        width: 420px;
+    .folderButtons {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
 
 @media (max-width: 430px) {
-
-    .festivalPage__informationBlock__img__festival {
-        width: 310px;
+    .folderButtons {
+        grid-template-columns: 1fr;
     }
 }

@@ -9,6 +9,7 @@ import { BelarussianTradePage } from "./Pages/BelarussianTradePage/BelarussianTr
 import { KirmashPage } from "./Pages/KirmashPage/KirmashPage";
 import { PresidentPage } from "./Pages/PresidentPage/PresidentPage";
 import { ProgramPage } from "./Pages/ProgramPage/ProgramPage";
+import { FestivalEventsPage } from "./Pages/FestivalEventsPage/FestivalEventsPage";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 // import { Toaster } from "react-hot-toast";
 import './../src/App.scss';
@@ -30,6 +31,7 @@ export class App extends React.Component {
             <Route path="/kirmash/:year" element={<KirmashPage />} />
             <Route path="/president/:year" element={<PresidentPage />} />
             <Route path="/program/:year" element={<ProgramPage />} />
+            <Route path="/festival-events/:year" element={<FestivalEventsPage />} />
             <Route path="*" element={<Navigate to="/main" />} />
           </Routes>
         </BrowserRouter>
